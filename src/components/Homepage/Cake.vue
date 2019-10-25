@@ -51,9 +51,9 @@ export default {
 
 <style scoped lang="scss">
 .cake {
-  width: 30%;
+  width: 31%;
   background: white;
-  margin-top: 20px;
+  margin-top: 40px;
   padding: 10px;
   border-radius: 3px;
 }

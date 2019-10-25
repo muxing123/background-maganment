@@ -56,9 +56,9 @@ export default {
 
 <style scoped lang="scss">
 .radar {
-  margin-top: 20px;
+  margin-top: 40px;
   background: white;
-  width: 30%;
+  width: 31%;
   padding: 10px;
   border-radius: 3px;
 }
