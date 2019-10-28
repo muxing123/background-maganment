@@ -25,6 +25,8 @@ time, mark, audio, video {
 }
 body {
   background: #f0f2f5;
+  width:100%;
+  min-width: 1084px;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,

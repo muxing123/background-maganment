@@ -32,7 +32,7 @@ const routes = [
     children: [
       {
         path: "",
-        name: Homepage,
+        name: "Alreadypub",
         component: () => import("../views/Alreadypub/Alreadypub")
       }
     ]
@@ -43,7 +43,7 @@ const routes = [
     children: [
       {
         path: "",
-        name: Homepage,
+        name: "Edit",
         component: () => import("../views/Edit/Edit")
       }
     ]
@@ -54,7 +54,7 @@ const routes = [
     children: [
       {
         path: "",
-        name: Homepage,
+        name: "Exportec",
         component: () => import("../views/Exportec/Exportec")
       }
     ]
@@ -65,7 +65,7 @@ const routes = [
     children: [
       {
         path: "",
-        name: Homepage,
+        name: "Pageform",
         component: () => import("../views/Pageform/Pageform")
       }
     ]
@@ -76,7 +76,7 @@ const routes = [
     children: [
       {
         path: "",
-        name: Homepage,
+        name: "Pictureup",
         component: () => import("../views/Pictureup/Pictureup")
       }
     ]
@@ -87,32 +87,15 @@ const routes = [
     children: [
       {
         path: "",
-        name: Homepage,
-        component: () => import("../views/Publishart/Publishart")
-      }
-    ]
-  },
-  {
-    path: "/Publishart",
-    component: Home,
-    children: [
-      {
-        path: "",
-        name: Homepage,
+        name: "Publishart",
         component: () => import("../views/Publishart/Publishart")
       }
     ]
   },
   {
     path: "/Register",
-    component: Home,
-    children: [
-      {
-        path: "",
-        name: Homepage,
-        component: () => import("../views/Register/Register")
-      }
-    ]
+    name: "Register",
+    component: () => import("../views/Register/Register")
   },
   {
     path: "/See",
@@ -120,21 +103,15 @@ const routes = [
     children: [
       {
         path: "",
-        name: Homepage,
+        name: "See",
         component: () => import("../views/See/See")
       }
     ]
   },
   {
     path: "/Signin",
-    component: Home,
-    children: [
-      {
-        path: "",
-        name: Homepage,
-        component: () => import("../views/Signin/Signin")
-      }
-    ]
+    name: "Signin",
+    component: () => import("../views/Signin/Signin")
   },
   {
     path: "/Signout",
@@ -142,7 +119,7 @@ const routes = [
     children: [
       {
         path: "",
-        name: Homepage,
+        name: "Signout",
         component: () => import("../views/Signout/Signout")
       }
     ]
@@ -153,7 +130,7 @@ const routes = [
     children: [
       {
         path: "",
-        name: Homepage,
+        name: "Statistics",
         component: () => import("../views/Statistics/Statistics")
       }
     ]
@@ -164,7 +141,7 @@ const routes = [
     children: [
       {
         path: "",
-        name: Homepage,
+        name: "Tabpage",
         component: () => import("../views/Tabpage/Tabpage")
       }
     ]
@@ -179,6 +156,15 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes
+});
+
+router.beforeEach((to, from, next) => {
+  let user = localStorage.getItem("user");
+  if (to.path === "/Signin" || to.path === "/Register") {
+    next();
+  } else {
+    user ? next() : next("/Signin");
+  }
 });
 
 export default router;

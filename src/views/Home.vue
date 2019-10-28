@@ -2,7 +2,7 @@
   <div>
     <el-container>
       <el-header>
-          <Top></Top>
+        <Top></Top>
       </el-header>
       <el-container>
         <el-aside style="width:200px;">
@@ -40,11 +40,14 @@ export default {
 <style scoped lang="scss">
 .el-header {
   color: #333;
-  text-align: center;
   line-height: 60px;
 }
 .el-aside {
   color: #333;
   line-height: 200px;
+}
+.el-main {
+  /*min-width: 1080px;*/
+  overflow: hidden;
 }
 </style>

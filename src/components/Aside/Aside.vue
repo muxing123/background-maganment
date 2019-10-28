@@ -77,5 +77,6 @@ export default {
   bottom: 0;
   width: 200px;
   background: rgb(52, 64, 85);
+  z-index: 100;
 }
 </style>

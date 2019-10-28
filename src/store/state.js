@@ -2,5 +2,9 @@
 export default {
   // num: 100,
   // citys: [],
-  // user: {}
-}
+  user: {
+    username: "",
+    password: ""
+  },
+  date: ""
+};
